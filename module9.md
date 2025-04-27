@@ -12,14 +12,76 @@ Algorithm:
 7.	Use the display function to visualize the stack's contents
  
 Program:
+```
+#include <stdio.h>
 
-//type your code here
+#define MAX 5 
+
+int stack[MAX];
+int top = -1;
+void push(int value) {
+    if (top == MAX - 1) {
+        printf("Stack Overflow! Cannot push %d\n", value);
+    } else {
+        top++;
+        stack[top] = value;
+        printf("%d pushed into stack.\n", value);
+    }
+}
+
+void pop() {
+    if (top == -1) {
+        printf("Stack Underflow! No elements to pop.\n");
+    } else {
+        printf("%d popped from stack.\n", stack[top]);
+        top--;
+    }
+}
+void display() {
+    if (top == -1) {
+        printf("Stack is empty.\n");
+    } else {
+        printf("Stack elements are:\n");
+        for (int i = top; i >= 0; i--) {
+            printf("%d\n", stack[i]);
+        }
+    }
+}
+
+int main() {
+    int choice, value;
+
+    while (1) {
+        printf("\n*** Stack Menu ***\n");
+        printf("1. Push\n2. Pop\n3. Display\n4. Exit\n");
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+
+        switch (choice) {
+            case 1:
+                printf("Enter value to push: ");
+                scanf("%d", &value);
+                push(value);
+                break;
+            case 2:
+                pop();
+                break;
+            case 3:
+                display();
+                break;
+            case 4:
+                printf("Exiting program.\n");
+                return 0;
+            default:
+                printf("Invalid choice! Please enter between 1-4.\n");
+        }
+    }
+}
+```
 
 Output:
 
-//paste your output here
-
-
+![image](https://github.com/user-attachments/assets/6fb91744-7f76-48ba-a948-c8bc6b2cba8f)
 
 Result:
 Thus, the program to display stack elements using an array is verified successfully.
@@ -35,15 +97,49 @@ Algorithm:
 4.	Call the push function as needed.
  
 Program:
+```
+#include <stdio.h>
 
-//type your code here
+#define MAX 5 
 
+float stack[MAX]; 
+int top = -1;     
+
+// Function to push a floating-point number into the stack
+void push(float value) {
+    if (top == MAX - 1) {
+        printf("Stack Overflow! Cannot push %.2f\n", value);
+    } else {
+        top++;
+        stack[top] = value;
+        printf("%.2f pushed into the stack.\n", value);
+    }
+}
+
+int main() {
+    int n, i;
+    float value;
+
+    printf("Enter the number of elements to push (max %d): ", MAX);
+    scanf("%d", &n);
+
+    if (n > MAX) {
+        printf("Cannot push more than %d elements.\n", MAX);
+        return 1;
+    }
+
+    for (i = 0; i < n; i++) {
+        printf("Enter element %d: ", i + 1);
+        scanf("%f", &value);
+        push(value);
+    }
+
+    return 0;
+}
+```
 Output:
 
-//paste your output here
-
-
-
+![image](https://github.com/user-attachments/assets/ababd4c3-9156-4fc7-934d-a51300afa9e0)
 
 Result:
 Thus, the program to push the given element in to a stack using array is verified successfully
@@ -61,13 +157,46 @@ Algorithm:
 4.	Call the display function and perform other queue operations as needed.
  
 Program:
+```
+#include <stdio.h>
+#define MAX 5 
+int queue[MAX];
+int front = -1, rear = -1;
+void display() {
+    if (front == -1 || front > rear) {
+        printf("Queue is empty.\n");
+    } else {
+        printf("Queue elements are:\n");
+        for (int i = front; i <= rear; i++) {
+            printf("%d ", queue[i]);
+        }
+        printf("\n");
+    }
+}
+void enqueue(int value) {
+    if (rear == MAX - 1) {
+        printf("Queue Overflow! Cannot enqueue %d\n", value);
+    } else {
+        if (front == -1) // First element inserted
+            front = 0;
+        rear++;
+        queue[rear] = value;
+        printf("%d enqueued into the queue.\n", value);
+    }
+}
 
-//type your code here
+int main() {
+    enqueue(10);
+    enqueue(20);
+    enqueue(30);
+    display();
 
+    return 0;
+}
+```
 Output:
 
-//paste your output here
-
+![image](https://github.com/user-attachments/assets/22a5f4b2-3f6a-475f-88ad-6bccb353a19f)
 
 Result:
 Thus, the program to display queue elements using array is verified successfully.
@@ -85,12 +214,45 @@ Algorithm:
 4.	Call the enqueue function as needed.
 
 Program:
+```
+#include <stdio.h>
+#define MAX 5 
+float queue[MAX]; 
+int front = -1, rear = -1; 
+void enqueue(float value) {
+    if (rear == MAX - 1) {
+        printf("Queue Overflow! Cannot insert %.2f\n", value);
+    } else {
+        if (front == -1) 
+            front = 0;
+        rear++;
+        queue[rear] = value;
+        printf("%.2f inserted into the queue.\n", value);
+    }
+}
 
-//type your code here
+int main() {
+    int n;
+    float value;
+    printf("Enter the number of elements to insert into the queue (max %d): ", MAX);
+    scanf("%d", &n);
 
+    if (n > MAX) {
+        printf("Cannot insert more than %d elements.\n", MAX);
+        return 1; 
+    }
+    for (int i = 0; i < n; i++) {
+        printf("Enter element %d: ", i + 1);
+        scanf("%f", &value);
+        enqueue(value); 
+    }
+
+    return 0;
+}
+```
 Output:
 
-//paste your output here
+![image](https://github.com/user-attachments/assets/a03db2fe-445f-4cd2-836f-b375b5b99a32)
 
 Result:
 Thus, the program to insert elements in queue using array is verified successfully.
@@ -120,13 +282,49 @@ o	After deletion, check if the front pointer has passed the rear pointer (front 
 
 
 Program:
+```
+#include <stdio.h>
 
-//type your code here
+#define MAX 5 
 
+int queue[MAX];
+int front = -1, rear = -1;
+void dequeue() {
+    if (front == -1) {
+        printf("Queue is empty! No elements to delete.\n");
+    } else {
+        printf("Deleted %d from the queue.\n", queue[front]);
+        front++; 
+        if (front > rear) {
+            front = rear = -1; // Reset the queue if it's empty
+            printf("Queue is now empty.\n");
+        }
+    }
+}
+
+int main() {
+    rear = 2; front = 0; // Setting up a sample queue
+    queue[0] = 10; queue[1] = 20; queue[2] = 30;
+    printf("Before Deletion:\n");
+    printf("Front: %d, Rear: %d\n", front, rear);
+    for (int i = front; i <= rear; i++) {
+        printf("%d ", queue[i]);
+    }
+    printf("\n");
+    dequeue();
+    printf("\nAfter Deletion:\n");
+    printf("Front: %d, Rear: %d\n", front, rear);
+    for (int i = front; i <= rear; i++) {
+        printf("%d ", queue[i]);
+    }
+    printf("\n");
+
+    return 0;
+}
+```
 Output:
 
-//paste your output here
-
+![image](https://github.com/user-attachments/assets/a70c3e07-2175-48ad-93b6-b88cd3bcca4c)
 
 Result:
 Thus, the function that deletes an element from a queue implemented using an array is verified successfully.
