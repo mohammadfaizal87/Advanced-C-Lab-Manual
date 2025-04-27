@@ -14,13 +14,71 @@ Algorithm:
 7.	Move to the next node using the next pointer.
  
 Program:
+```
+#include <stdio.h>
+#include <stdlib.h>
+struct Node {
+    int data;          
+    struct Node* next;  
+};
+struct Node* head = NULL;
+void push(int value) {
+    struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));  
+    if (newNode == NULL) {
+        printf("Memory allocation failed!\n");
+        return;
+    }
+    newNode->data = value;       
+    newNode->next = head;         
+    head = newNode;               
+}
+void display() {
+    struct Node* temp = head;  
+    if (temp == NULL) {
+        printf("Stack is empty.\n");
+        return;
+    }
+    printf("Stack elements: ");
+    while (temp != NULL) {
+        printf("%d ", temp->data); 
+        temp = temp->next;         
+    }
+    printf("\n");
+}
 
-//type your code here
+int main() {
+    int choice, value;
+    while (1) {
+        printf("\n1. Push\n2. Display Stack\n3. Exit\n");
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+        
+        switch (choice) {
+            case 1:
+                printf("Enter value to push: ");
+                scanf("%d", &value);
+                push(value);  
+                break;
+                
+            case 2:
+                display();  
+                break;
+                
+            case 3:
+                exit(0); 
+                
+            default:
+                printf("Invalid choice. Please try again.\n");
+        }
+    }
 
+    return 0;
+}
+         
+```
 Output:
 
-//paste your output here
-
+![image](https://github.com/user-attachments/assets/81f1ba99-5bcd-45b5-b299-7562a7cd1af9)
 
 Result:
 Thus, the program to display stack elements using linked list is verified successfully. 
@@ -39,14 +97,85 @@ Algorithm:
 4.	Set head to point to the next node in the stack.
  
 Program:
+```
+#include <stdio.h>
+#include <stdlib.h>
+struct Node {
+    int data;           
+};
+struct Node* head = NULL;
+void push(int value) {
+    struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));  
+    if (newNode == NULL) {
+        printf("Memory allocation failed!\n");
+        return;
+    }
+    newNode->data = value;        
+    newNode->next = head;         
+    head = newNode;               
+}
+void pop() {
+    if (head == NULL) {  
+        printf("Stack is empty.\n");
+        return;
+    }
+    
+    struct Node* temp = head;  
+    head = head->next;         
+    free(temp);                
+    printf("Element popped from the stack.\n");
+}
+void display() {
+    struct Node* temp = head;  
+    if (temp == NULL) {
+        printf("Stack is empty.\n");
+        return;
+    }
+    
+    printf("Stack elements: ");
+    while (temp != NULL) {
+        printf("%d ", temp->data);  
+        temp = temp->next;         
+    }
+    printf("\n");
+}
 
-//type your code here
+int main() {
+    int choice, value;
+    while (1) {
+        printf("\n1. Push\n2. Pop\n3. Display Stack\n4. Exit\n");
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+        
+        switch (choice) {
+            case 1:
+                printf("Enter value to push: ");
+                scanf("%d", &value);
+                push(value);  
+                break;
+                
+            case 2:
+                pop();  
+                break;
+                
+            case 3:
+                display();  
+                break;
+                
+            case 4:
+                exit(0);  
+                
+            default:
+                printf("Invalid choice. Please try again.\n");
+        }
+    }
 
+    return 0;
+}
+```
 Output:
 
-//paste your output here
-
-
+![image](https://github.com/user-attachments/assets/4bfedc3c-b905-48fe-8a6d-5684b2d95e2b)
 
 Result:
 Thus, the program to pop an element from the given stack using liked list is verified successfully.
@@ -63,12 +192,78 @@ Algorithm:
 5.	End the display function.
  
 Program:
+```
+#include <stdio.h>
+#include <stdlib.h>
+struct Node {
+    int data;          
+    struct Node* next;  
+};
+struct Node* front = NULL;
+struct Node* rear = NULL;
+void enqueue(int value) {
+    struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));  
+    if (newNode == NULL) {
+        printf("Memory allocation failed!\n");
+        return;
+    }
+    newNode->data = value;        
+    newNode->next = NULL;         
+    
+    if (rear == NULL) {           
+        front = rear = newNode;
+    } else {
+        rear->next = newNode;     
+        rear = newNode;           
+    }
+}
+void display() {
+    if (front == NULL) {  
+        printf("Queue is empty.\n");
+        return;
+    }
+    
+    struct Node* temp = front;  
+    printf("Queue elements: ");
+    while (temp != NULL) {
+        printf("%d ", temp->data);  
+        temp = temp->next;          
+    }
+    printf("\n");
+}
 
-//type your code here
+int main() {
+    int choice, value;
+    while (1) {
+        printf("\n1. Enqueue\n2. Display Queue\n3. Exit\n");
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
 
+        switch (choice) {
+            case 1:
+                printf("Enter value to enqueue: ");
+                scanf("%d", &value);
+                enqueue(value);  
+                break;
+
+            case 2:
+                display();  
+                break;
+
+            case 3:
+                exit(0);  
+
+            default:
+                printf("Invalid choice. Please try again.\n");
+        }
+    }
+
+    return 0;
+}
+```
 Output:
 
-//paste your output here
+![image](https://github.com/user-attachments/assets/02c03579-fd41-4e49-bc2f-cb2c4d434711)
 
 Result:
 Thus, the program to display queue elements using linked list is verified successfully.
@@ -89,12 +284,85 @@ Algorithm:
 6.	End of Enqueue Operation
  
 Program:
+```
+#include <stdio.h>
+#include <stdlib.h>
+struct Node {
+    int data;           
+    struct Node* next; 
+};
+struct Node* front = NULL;
+struct Node* rear = NULL;
+void enqueue(int value) {
+   
+    struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
+    if (newNode == NULL) {
+        printf("Memory allocation failed!\n");
+        return;
+    }
+    
+    newNode->data = value; 
+    newNode->next = NULL;   
+    
+    
+    if (rear == NULL) {
+        
+        front = rear = newNode;
+    } else {
+        
+        rear->next = newNode;
+       
+        rear = newNode;
+    }
 
-//type your code here
+    printf("Element %d inserted into the queue.\n", value);
+}
+void display() {
+    if (front == NULL) {  
+        printf("Queue is empty.\n");
+        return;
+    }
+    struct Node* temp = front;  
+    printf("Queue elements: ");
+    while (temp != NULL) {
+        printf("%d ", temp->data);  
+        temp = temp->next;          
+    }
+    printf("\n");
+}
 
+int main() {
+    int choice, value;
+    while (1) {
+        printf("\n1. Enqueue\n2. Display Queue\n3. Exit\n");
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+
+        switch (choice) {
+            case 1:
+                printf("Enter value to enqueue: ");
+                scanf("%d", &value);
+                enqueue(value);  
+                break;
+
+            case 2:
+                display();  
+                break;
+
+            case 3:
+                exit(0);  
+
+            default:
+                printf("Invalid choice. Please try again.\n");
+        }
+    }
+
+    return 0;
+}
+```
 Output:
 
-//paste your output here
+![image](https://github.com/user-attachments/assets/9a151d59-50aa-423e-bca4-91a795fd007c)
 
 Result:
 Thus, the program to insert elements in queue using linked list is verified successfully.
@@ -116,14 +384,100 @@ o	If the queue is empty (i.e., the front pointer is NULL), return an error or a 
 o	If the queue is not empty, return the data stored in the front node of the linked list (i.e., the element at the head of the queue).
 
 Program:
+```
+#include <stdio.h>
+#include <stdlib.h>
+struct Node {
+    int data;           
+    struct Node* next;  
+};
+struct Node* front = NULL;
+struct Node* rear = NULL;
+void enqueue(int value) {
+   
+    struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
+    if (newNode == NULL) {
+        printf("Memory allocation failed!\n");
+        return;
+    }
+    
+    newNode->data = value; 
+    newNode->next = NULL;  
+   
+    if (rear == NULL) {
+        
+        front = rear = newNode;
+    } else {
+       
+        rear->next = newNode;
+        
+        rear = newNode;
+    }
 
-//type your code here
+    printf("Element %d inserted into the queue.\n", value);
+}
+int peek() {
+    if (front == NULL) {
+        printf("Queue is empty. No elements to peek.\n");
+        return -1;  
+    }
+    return front->data;  
+}
+void display() {
+    if (front == NULL) {  
+        printf("Queue is empty.\n");
+        return;
+    }
+
+    struct Node* temp = front;  
+    printf("Queue elements: ");
+    while (temp != NULL) {
+        printf("%d ", temp->data);  
+        temp = temp->next;          
+    }
+    printf("\n");
+}
+
+int main() {
+    int choice, value;
+    while (1) {
+        printf("\n1. Enqueue\n2. Peek\n3. Display Queue\n4. Exit\n");
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+
+        switch (choice) {
+            case 1:
+                printf("Enter value to enqueue: ");
+                scanf("%d", &value);
+                enqueue(value);  
+                break;
+
+            case 2:
+                value = peek();  
+                if (value != -1) {
+                    printf("Front element is: %d\n", value);
+                }
+                break;
+
+            case 3:
+                display();  
+                break;
+
+            case 4:
+                exit(0);  
+
+            default:
+                printf("Invalid choice. Please try again.\n");
+        }
+    }
+
+    return 0;
+}
+```
 
 Output:
 
-//paste your output here
-
-
+![image](https://github.com/user-attachments/assets/8cfee723-d168-41b5-abe8-59723badbea9)
 
 Result:
 
