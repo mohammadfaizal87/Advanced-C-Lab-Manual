@@ -39,7 +39,7 @@ int main() {
 ```
 Output:
 
-![image](https://github.com/user-attachments/assets/d490e2e4-e62b-42c8-b5e6-aad2d24e3b67)
+![image](https://github.com/user-attachments/assets/79ed5bc7-acd5-4256-9a11-4b3297cd459b)
 
 
 Result:
@@ -97,7 +97,8 @@ int main() {
 ```
 Output:
 
-![image](https://github.com/user-attachments/assets/1a79aac9-b244-40bd-a570-956cb011dc80)
+![image](https://github.com/user-attachments/assets/d1349bd2-dc17-4e26-b684-fedf60921a98)
+
 
 Result:
 Thus, the program to print the maximum values for the AND, OR and XOR comparisons
@@ -190,7 +191,8 @@ int main() {
 ```
 Output:
 
-![image](https://github.com/user-attachments/assets/96b7b3a3-97ab-45eb-8427-1ca27f30c333)
+![image](https://github.com/user-attachments/assets/9135a059-a318-4796-9c25-a56e7c80a2e5)
+
 
 
 Result:
@@ -232,7 +234,8 @@ return 0;
 ```
 Output:
 
-![image](https://github.com/user-attachments/assets/d05bbdd1-df25-4932-8997-bc07d4124067)
+![image](https://github.com/user-attachments/assets/72747c37-4597-49db-beb3-966325ed0963)
+
 
 Result:
 Thus, the program prints the sum of the integers in the array is verified successfully.
@@ -287,7 +290,7 @@ int main() {
 ```
 Output:
 
-![image](https://github.com/user-attachments/assets/17889fb0-a5f7-4078-b39d-26ba68fb6e2f)
+![image](https://github.com/user-attachments/assets/e1f39e7a-0bd7-43f7-b04d-bad0eff12b76)
 
 Result:
 
