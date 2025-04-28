@@ -78,7 +78,8 @@ int main() {
 ```
 Output:
 
-![image](https://github.com/user-attachments/assets/81f1ba99-5bcd-45b5-b299-7562a7cd1af9)
+![image](https://github.com/user-attachments/assets/8a58f7b2-2040-43b2-ab01-82bfc68a646a)
+
 
 Result:
 Thus, the program to display stack elements using linked list is verified successfully. 
@@ -175,7 +176,8 @@ int main() {
 ```
 Output:
 
-![image](https://github.com/user-attachments/assets/4bfedc3c-b905-48fe-8a6d-5684b2d95e2b)
+![image](https://github.com/user-attachments/assets/9a350955-204c-4c3e-87cc-19919be1bec3)
+
 
 Result:
 Thus, the program to pop an element from the given stack using liked list is verified successfully.
@@ -263,7 +265,8 @@ int main() {
 ```
 Output:
 
-![image](https://github.com/user-attachments/assets/02c03579-fd41-4e49-bc2f-cb2c4d434711)
+![image](https://github.com/user-attachments/assets/817676e4-f160-43c3-86ad-a429ce0fcbdb)
+
 
 Result:
 Thus, the program to display queue elements using linked list is verified successfully.
@@ -362,7 +365,7 @@ int main() {
 ```
 Output:
 
-![image](https://github.com/user-attachments/assets/9a151d59-50aa-423e-bca4-91a795fd007c)
+![image](https://github.com/user-attachments/assets/e9e80970-e7f8-4548-bca5-eb7db68bd4ce)
 
 Result:
 Thus, the program to insert elements in queue using linked list is verified successfully.
@@ -477,7 +480,8 @@ int main() {
 
 Output:
 
-![image](https://github.com/user-attachments/assets/8cfee723-d168-41b5-abe8-59723badbea9)
+![image](https://github.com/user-attachments/assets/af50ab52-2b6e-4a05-98e6-9ba43c09a27a)
+
 
 Result:
 
