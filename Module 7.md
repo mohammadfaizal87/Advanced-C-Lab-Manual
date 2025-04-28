@@ -53,7 +53,8 @@ int main() {
 
 Output:
 
-![image](https://github.com/user-attachments/assets/eb67f758-82f8-4e4e-a6d5-cbf4a6783b7c)
+![image](https://github.com/user-attachments/assets/8758f983-3c12-4886-ae8d-c0ee69c0ea44)
+
 
 Result:
 Thus, the program is verified successfully. 
@@ -103,7 +104,8 @@ int main() {
 ```
 Output:
 
-![image](https://github.com/user-attachments/assets/e35e5b49-55ab-414d-81a9-194b794e379f)
+![image](https://github.com/user-attachments/assets/307a9b94-442a-41b2-b4e7-f574b45fd213)
+
 
 
 Result:
@@ -154,7 +156,7 @@ int main() {
 ```
 Output:
 
-![image](https://github.com/user-attachments/assets/2994e32f-1445-4d7a-8e95-024fe245243d)
+![image](https://github.com/user-attachments/assets/6f1747b8-f0c3-473c-a149-c8b383623bf6)
 
 
 Result:
@@ -213,7 +215,8 @@ int main() {
 ```
 Output:
 
-![image](https://github.com/user-attachments/assets/95c1c156-b440-4a1d-8659-72eee2a27b0f)
+![image](https://github.com/user-attachments/assets/05e79c15-850f-4b30-a183-40c9c1b04095)
+
 
 Result:
 Thus, the program is verified successfully
@@ -291,13 +294,7 @@ int main() {
 ```
 Output:
 
-![image](https://github.com/user-attachments/assets/533a2c84-e032-4c9a-9660-01bf60cbe4b4)
-
-
-
-
-
-
+![image](https://github.com/user-attachments/assets/a4c975e8-e3dc-4775-90cd-33d9891d2047)
 
 Result:
 Thus, the program is verified successfully
